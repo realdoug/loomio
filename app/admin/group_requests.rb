@@ -18,7 +18,7 @@ ActiveAdmin.register GroupRequest do
     column :admin_email
     column "Approve" do |group_request|
       link = ""
-      unless group_request.approved? || group_request.accepted?
+      unless group_request.approved? or group_request.accepted?
         link += link_to "Approve",
                approve_admin_group_request_path(group_request.id),
                :method => :put, :id => "approve_group_request_#{group_request.id}"
@@ -34,6 +34,10 @@ ActiveAdmin.register GroupRequest do
         link += link_to "Already Approved",
                mark_as_manually_approved_admin_group_request_path(group_request.id),
                :method => :put, :id => "approve_group_request_#{group_request.id}"
+        link += " | "
+        link += link_to "Mark as Spam",
+               mark_as_spam_admin_group_request_path(group_request.id),
+               :method => :put, :id => "mark_as_spam_group_request_#{group_request.id}"
       end
       link.html_safe
     end
@@ -62,6 +66,14 @@ ActiveAdmin.register GroupRequest do
     group_request.mark_as_manually_approved!
     redirect_to admin_group_requests_path,
       :notice => "Group marked as 'already approved': " +
+      group_request.name
+  end
+
+  member_action :mark_as_spam, :method => :put do
+    group_request = GroupRequest.find(params[:id])
+    group_request.mark_as_spam!
+    redirect_to admin_group_requests_path,
+      :notice => "Group marked as 'spam': " +
       group_request.name
   end
 

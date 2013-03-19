@@ -116,4 +116,11 @@ describe GroupRequest do
       group_request.approve!
     end
   end
+
+  describe "#mark_as_spam!" do
+    it "should set the status to marked_as_spam" do
+      group_request.mark_as_spam!
+      group_request.should be_marked_as_spam
+    end
+  end
 end

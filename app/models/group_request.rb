@@ -50,7 +50,7 @@ class GroupRequest < ActiveRecord::Base
     end
 
     event :mark_as_spam do
-      transitions to: :marked_as_spam, from: [:awaiting_approval]
+      transitions to: :marked_as_spam, from: [:awaiting_approval, :ignored]
     end
   end
 
