@@ -9,8 +9,16 @@ body.discussions.new {
 
 /** discussion show form*/
 body.discussions.show {
+
+  h3 {
+    font-size: 18px;
+    line-height: 2em;
+    margin: 0;
+  }
+
   h2#discussion-title {
     font-size: 22px;
+    margin: 0;
   }
   .selector-panel {
     background-color: $selector-panel;
@@ -90,12 +98,6 @@ body.discussions.show {
     background-color: #EEE;
     padding: 5px;
     float: right;
-  }
-
-  .header-text {
-  //   color: $mid-grey;
-  //   font-weight: bold;
-    line-height: 2.0em;
   }
 
   .last-edited-by, .started-by {
