@@ -40,6 +40,7 @@ class Group < ActiveRecord::Base
            :conditions => { :invitation_token => nil }
   has_many :invited_users, :through => :memberships, source: :user,
            :conditions => "invitation_token is not NULL"
+  has_many :users_and_invited_users, through: :memberships, source: :user
   has_many :requested_users, :through => :membership_requests, source: :user
   has_many :admins, through: :admin_memberships, source: :user
   has_many :discussions, :dependent => :destroy
@@ -105,10 +106,6 @@ class Group < ActiveRecord::Base
     end
   end
 
-  def users_sorted
-    users.order('lower(name)').all
-  end
-
   def admin_email
     if admins.exists?
       admins.first.email
@@ -125,6 +122,14 @@ class Group < ActiveRecord::Base
 
   def closed_motions
     motions.where('close_date <= ?', Time.now).order("close_date desc")
+  end
+
+  def parent_members_visible_to(user)
+    if user.can?(:add_members, parent)
+      parent.users_and_invited_users.sorted_by_name
+    else
+      parent.users.sorted_by_name
+    end
   end
 
   #

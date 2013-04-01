@@ -8,9 +8,9 @@ Given /^a group(?: named)? "(.*?)"(?: exists)?$/ do |group_name|
   FactoryGirl.create(:group, :name => group_name)
 end
 
-Given /^I visit create subgroup page for group named "(.*?)"$/ do |arg1|
+Given /^I visit create subgroup page$/ do
   find("#groups").click_on("Groups")
-  find("#groups").click_on(arg1)
+  find("#groups").click_on(@group.name)
   click_link("subgroup-new")
 end
 
@@ -55,6 +55,13 @@ Given /^"(.*?)" is not a member of the group$/ do |arg1|
   user = FactoryGirl.create :user, name: arg1,
                             email: "#{arg1}@example.org",
                             password: 'password'
+end
+
+Given /^"(.*?)" is a member of the subgroup$/ do |arg1|
+  user = FactoryGirl.create :user, name: arg1,
+                            email: "#{arg1}@example.org",
+                            password: 'password'
+  @subgroup.add_member! user
 end
 
 Then /^(?:I|they) should be taken to the group page$/ do
