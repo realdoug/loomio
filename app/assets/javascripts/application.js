@@ -13,6 +13,7 @@
 //= require lib/jquery.tokeninput
 //= require lib/jquery.mousewheel
 //= require lib/jquery.placeholder
+//= require scrollTo
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require underscore
@@ -35,3 +36,5 @@
 //= require jquery.atwho
 //= require pop-over
 //= require announcements
+//= require external-script
+//= require loomio-metrics
