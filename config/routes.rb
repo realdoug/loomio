@@ -1,7 +1,7 @@
 Loomio::Application.routes.draw do
   ActiveAdmin.routes(self)
 
-  devise_for :users, controllers: { sessions: 'users/sessions', 
+  devise_for :users, controllers: { sessions: 'users/sessions',
                                     invitations: 'users/invitations' }
 
   resources :group_requests, only: [:create, :new] do
@@ -94,6 +94,10 @@ Loomio::Application.routes.draw do
     get :about
     get :privacy
     get :browser_not_supported
+  end
+
+  scope controller: 'help' do
+    get :help
   end
 
   resources :woc, only: :index do
