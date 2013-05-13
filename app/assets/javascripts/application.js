@@ -36,5 +36,4 @@
 //= require jquery.atwho
 //= require pop-over
 //= require announcements
-//= require external-script
 //= require loomio-metrics
