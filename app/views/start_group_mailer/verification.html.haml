@@ -1,9 +1,7 @@
-%h2 You're almost done!
-
-%p Please click this verification link to finalise your request:
+%p Thanks for requesting a group on Loomio. Please click this verification link to finalise your application:
 
 %strong
   - link_url = verify_group_request_url(@group_request, token: @token)
   %p= link_to link_url, link_url
 
-%p If you did not request to join Loomio please ignore this email.
+%p If you did not request to join Loomio you can ignore this email.

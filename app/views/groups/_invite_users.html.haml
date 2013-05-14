@@ -1,14 +1,21 @@
-%h1 Invite people
+%h1 Invite your group members
 %br
 .row
   .span5
     .control-group
-      = text_field_tag :admin_email, current_user.email, disabled: true
-    .control-group
-      = label 'invitees', t("group_setup_form.invitees_label"), class: "control-label", for: "invitees"
+      %p
+        Enter email addresses, seperated by commas:
       = text_area_tag 'invitees', nil, class: 'validate-emails', placeholder: t("group_setup_form.invitees_placeholder")
       .email-validation-help
       = form.input :recipients, as: :hidden, input_html: { class: 'recipients' }
     .control-group
-      = form.input :message_body, as: :text, input_html: { class: 'validate-presence', value: t("invitation_to_join_group.body_editable", group: group.name) }
+      %p You can customise the invitation your members receive, to explain what your group will be using Loomio for and why it’s worth their time to get involved.
+      %p
+        %strong
+          Invitation message:
+      = form.input :message_body, label: false, as: :text, input_html: { class: 'validate-presence', value: t("invitation_to_join_group.body_editable", group: group.name) }
       .inline-help= t("group_setup_form.errors.invites_body")
+  .span3.offset1.more-help
+    %p You can invite people to your group at any time.
+    %p You might want to invite all your members in right away, or you could start by inviting just the people you’re working most closely with.
+

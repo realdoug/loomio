@@ -1,7 +1,7 @@
-$(document).ready ->
-  setInterval () ->
-    saveSetup()
-  , 60000
+# $(document).ready ->
+#   setInterval () ->
+#     saveSetup()
+#   , 60000
 
 $ -> #initialiazation of form
   if $("body.group_setup").length > 0

@@ -13,9 +13,24 @@ body.group_setup.setup {
     float: right;
     margin-left: 5px;
   }
-  #wizard-tabs { min-height: 600px; }
-}
+  #wizard-tabs { min-height: 500px; }
+  .profiler-results{display: none;}
 
+  .more-help{
+    background: ghostwhite;
+    padding: 1.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    @include box-shadow (1px, 1px, 1px, rgba(0,0,0,0.2));
+    @include border-radius (6px);
+    ul{
+      list-style: circle;
+      list-style-position:inside;
+      li{
+        margin-bottom: 0.25em;
+      }
+    }
+   }
+}
 body.group_setup.finish {
   .recipient-list {
     max_height: 300px;

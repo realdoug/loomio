@@ -128,11 +128,13 @@ li.selector-item a.selector-link:hover {
 .group-options .btn-app.dropdown-toggle{ width: 110px }
 .btn-grey { color: $mid-grey; }
 a.btn-icon:hover { color: $dark-grey; }
-body.sessions.new, 
-body.pages.home, 
-body.pages.purpose, 
-body.pages.how_it_works, 
+body.sessions.new,
+body.pages.home,
+body.pages.purpose,
+body.pages.how_it_works,
 body.pages.about,
+body.group_requests,
+body.invitations,
 body.pages.about_us, body.woc.index, body.group_requests.start_new_group {
   color: black;
 
