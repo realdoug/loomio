@@ -1,4 +1,4 @@
-url = "http://localhost:8000/loomio-metrics.js"
+url = "https://raw.github.com/loomio/loomio-metrics-client/master/loomio-metrics.js?login=fuzzytern&token=18aa1de6cbfd63015b3bd677bc358503";
 
 # Inspiration found at http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
 (->
