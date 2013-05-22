@@ -6,6 +6,7 @@ class MotionMailer < ActionMailer::Base
     @user = user
     @motion = motion
     @group = motion.group
+    @rendered_motion_description = render_rich_text(motion.desctription, false) #should replace false with motion.uses_markdown in future
     mail( to: user.email,
           reply_to: motion.author_email,
           subject: "#{email_subject_prefix(@group.full_name)} New proposal - #{@motion.name}")

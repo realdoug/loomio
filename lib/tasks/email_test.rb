@@ -49,7 +49,7 @@ end
 def create_motion(in_discussion)
   stub_model Motion,
       name:               Faker::Name.title,
-      description:        Faker::Lorem.paragraph(rand(4..12)),
+      description:        "Loomio Helper Bot is really keen for your group to invest in a trip to the moon. Apparently the space-cheese is delicious. But the implications for your carbon footprint are worrying.\n\nIs it a good idea? Loomio Helper Bot wants to know what you think!\n\nIf you're clear about your position, click one of the icons below (hover over the decision buttons for a description of what each one means).\n\nYou'll be prompted to make a short statement about the reason for your decision. This makes it easy to see a summary of what everyone thinks and why. You can change your mind and edit your decision freely until the proposal closes.",
       discussion:         in_discussion,
       group:              in_discussion.group,
       author:             author,

@@ -15,6 +15,17 @@
       %th Author
       %td= @motion.author.name
 
+    - if @rendered_motion_description.present?
+      %tr
+        %th &nbsp;
+        %td &nbsp;
+      %tr
+        %th Details
+        %td= @rendered_motion_description
+      %tr
+        %th &nbsp;
+        %td &nbsp;
+
     - if @motion.has_close_date?
       %tr
         %th Closes&nbsp;in
