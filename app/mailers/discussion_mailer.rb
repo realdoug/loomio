@@ -6,6 +6,13 @@ class DiscussionMailer < ActionMailer::Base
     @user = user
     @discussion = discussion
     @group = discussion.group
+
+    if user.language_preference
+      I18n.locale = user.language_preference
+    elsif discussion.author.language_preference
+      I18n.locale = discussion.author.language_preference
+    end
+
     mail(
       to: user.email,
       reply_to: discussion.author_email,

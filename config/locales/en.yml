@@ -387,6 +387,18 @@ en:
         update: "Update settings"
 
   #
+  # EMAILS
+  #
+
+  email:
+    unsubscribe: "Unsubscribe or change your email preferences:"
+    unsubscribe_html: "<a href='%{link_path}'>%{link_text}</a> to unsubscribe or change your email preferences."
+    create_discussion:
+      intro: "A new discussion was created in a Loomio group that you belong to."
+      started_by: "Started by"
+      view_discussion: "To view this discussion click:"
+
+  #
   # COMMON WORDS
   #
 
@@ -397,6 +409,7 @@ en:
   cancel: "Cancel"
   change: "Change"
   changing: "Changing"
+  click_here: "Click here"
   close: "Close"
   closing: "Closing"
   closed: "Closed"
