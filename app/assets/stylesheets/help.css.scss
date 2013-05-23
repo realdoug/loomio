@@ -3,7 +3,6 @@
 
 // Help page
 .help {
-
   h1 { font-size: 36px; }
   h2 {
     font-size: 28px;
@@ -15,31 +14,24 @@
     margin-bottom: 2em;
   }
   section { margin: 3em 0 3em; }
-
   .span8 {
     margin: 0;
     width: 680px;
-
     section#feedback {
       margin: 6em 0 0;
-
       h2 { margin-top: 0; }
       .row-fluid { text-align: left; }
     }
-
     section#how-it-works {
       margin: 0;
       padding-top: 3em;
-
+      .divider{margin-top: 0em; border-bottom: 1px solid #eee}
       #video_tutorial p { margin-left: 14%; }
     }
   }
-
   .span3#sidenav {
-
     .nav.nav-tabs {
       width: 185px;
-
       .active {
         a {
           background-color: #08c;
@@ -54,36 +46,31 @@
         }
         &.sub {
           font-size: 0.9em;
-
           a {
             color: #777777;
             padding-left: 20px;
-
             &:hover { color: #fff; }
           }
         }
       }
     }
   }
-
 }
 
 //Renders in help and on frontpage
 section#how-it-works {
-
   img, iframe { border: 1px solid #eee; }
-
   iframe { margin-top: 0; }
-
   p {
     margin: 0 10% 18px;
     text-align: left;
   }
-
+  .divider{
+    margin-top: 3em
+  }
   #make_a_decision {
     .positions {
       margin: 0 14% 0;
-
       img {
         border: none;
         margin: 0 4px 0 0;
@@ -93,40 +80,10 @@ section#how-it-works {
       span { font-weight: 700; }
     }
   }
-
-  .modal {
-    border: none;
-    @include border-radius(0);
-    margin-left: -450px;
-    margin-top: -340px;
-    width: 902px;
-
-    .close {
-      font-size: 30px;
-      position: absolute;
-      opacity: 1;
-      right: 10px;
-      top: 10px;
-    }
-
-    .modal-body {
-      margin: 1px;
-      max-height: 675px;
-      overflow: hidden;
-      padding: 0px;
-      width: 900px;
-
-      a { cursor: pointer; }
-    }
-  }
-
   .row-fluid {
     margin-bottom: 2em;
     text-align: center;
-
     &:first-child { margin-bottom: 0; }
   }
-
   #video_tutorial p { margin-left: 18%; }
-
 }
