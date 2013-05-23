@@ -12,6 +12,7 @@
   %body{class: "#{controller_name} #{action_name}"}
     .main-container.container
       = render 'announcements' if user_signed_in?
+      = render 'server_data' if user_signed_in?
       = render 'header'
       = render 'flash_messages', :flash => flash, :on_landing_page => false
       = render_help_text(@group)
