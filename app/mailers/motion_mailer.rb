@@ -6,6 +6,13 @@ class MotionMailer < ActionMailer::Base
     @user = user
     @motion = motion
     @group = motion.group
+
+    if user.language_preference
+      I18n.locale = user.language_preference
+    elsif motion.author.language_preference
+      I18n.locale = motion.author.language_preference
+    end
+
     mail( to: user.email,
           reply_to: motion.author_email,
           subject: "#{email_subject_prefix(@group.full_name)} New proposal - #{@motion.name}")

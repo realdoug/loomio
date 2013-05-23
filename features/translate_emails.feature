@@ -27,3 +27,28 @@ Feature: translate emails
     Then "jesse@example.org" should receive an email
     When they open the email
     Then they should see "Grupo" in the email body
+
+  Scenario: Spanish-speaking group member recieves new proposal email in Spanish
+    Given I am logged in
+    And I am an admin of a group with a discussion
+    And "Jesse" is a Spanish-speaking member of the group
+    And no emails have been sent
+    When I visit the discussion page
+    And I click the element "#new-proposal"
+    And fill in the proposal details and submit the form
+    Then "jesse@example.org" should receive an email
+    When they open the email
+    Then they should see "Grupo" in the email body
+
+  Scenario: group member with unspecified language preference receives new proposal email in proposal author's language
+    Given I am logged in
+    And I am an admin of a group with a discussion
+    And "Jesse" is a member of the group
+    And no emails have been sent
+    And my language preference is set to "es"
+    And I visit the discussion page
+    And I click the element "#new-proposal"
+    And fill in the proposal details and submit the form
+    Then "jesse@example.org" should receive an email
+    When they open the email
+    Then they should see "Grupo" in the email body
